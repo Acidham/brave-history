@@ -82,7 +82,8 @@ if len(results) > 0:
         wf.setItem(
             title=title,
             subtitle="%s Visits: %s" % (url,str(visits)),
-            arg=url
+            arg=url,
+            quicklookurl=url
         )
         wf.addItem()
 else:
