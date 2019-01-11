@@ -13,8 +13,8 @@ def removeDuplicates(li):
     prev = str()
     newList = list()
     for i in li:
-        cur = i[0]
-        if prev != cur:
+        cur = i[1]
+        if prev.lower() != cur.lower():
             newList.append(i)
             prev = cur
     return newList
@@ -30,16 +30,8 @@ def filterResults(li,term):
         newList = li
     return newList
 
-def filterHostname(li):
-    newList = list()
-    prev_host = str()
-    for i in li:
-        o = urlparse.urlparse(i[0])
-        cur_host = o.hostname
-        if prev_host != cur_host:
-            newList.append(i)
-            prev_host = cur_host
-    return newList
+def sortListTuple(list_tuple,el):
+    return sorted(list_tuple, key=lambda tup: tup[el], reverse=True)
 
 
 wf = Items()
@@ -72,7 +64,7 @@ os.remove(history_db)
 
 results = removeDuplicates(results)
 results = filterResults(results,search_term)
-results = filterHostname(results)
+results = sortListTuple(results,2)
 
 if len(results) > 0:
     for i in results:
@@ -81,7 +73,7 @@ if len(results) > 0:
         visits = i[2]
         wf.setItem(
             title=title,
-            subtitle="%s Visits: %s" % (url,str(visits)),
+            subtitle="(Visits: %s) %s" % (str(visits),url),
             arg=url,
             quicklookurl=url
         )
