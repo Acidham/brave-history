@@ -4,7 +4,7 @@ import time
 import os
 """
 Alfred Script Filter generator class
-Version: 0.94
+Version: 0.95
 """
 
 
@@ -177,12 +177,24 @@ class Tools:
     @staticmethod
     def sortListDict(list_dict,key,reverse=True):
         """
-        Sort List with Dictionary based on given key
+        Sort List with Dictionary based on given key in Dict
         :param list_dict: list(dict())
         :param key: str()
         :param reverse: bool()
         """
         return sorted(list_dict, key=lambda k: k[key], reverse=reverse)
+
+    @staticmethod
+    def sortListTuple(list_tuple, el,reverse=True):
+        """
+        Sort List with Tubles based on a given element in Tuple
+        :param list_tuple: list(tuple())
+        :param el: int in tuple
+        :param reverse: bool()
+        :return:
+        """
+        return sorted(list_tuple, key=lambda tup: tup[el], reverse=reverse)
+
     @staticmethod
     def notify(title, text):
         os.system("""

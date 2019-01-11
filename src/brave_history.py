@@ -5,8 +5,6 @@ from Alfred import Tools as Tools
 import sqlite3
 import shutil
 import os
-import urlparse
-import sys
 
 
 def removeDuplicates(li):
@@ -30,8 +28,7 @@ def filterResults(li,term):
         newList = li
     return newList
 
-def sortListTuple(list_tuple,el):
-    return sorted(list_tuple, key=lambda tup: tup[el], reverse=True)
+
 
 
 wf = Items()
@@ -54,17 +51,20 @@ except IOError:
     wf.write()
     exit()
 
-c = sqlite3.connect(history_db)
-cursor = c.cursor()
-select_statement = "SELECT urls.url, urls.title, urls.visit_count FROM urls, visits WHERE urls.id = visits.url;"
-cursor.execute(select_statement)
-results = cursor.fetchall()
+with sqlite3.connect(history_db) as c:
+    cursor = c.cursor()
+    select_statement = "SELECT urls.url, urls.title, urls.visit_count FROM urls, visits WHERE urls.id = visits.url;"
+    cursor.execute(select_statement)
+    results = cursor.fetchall()
 
 os.remove(history_db)
 
+# Remove duplicate Entries
 results = removeDuplicates(results)
+# Search entered into Alfred
 results = filterResults(results,search_term)
-results = sortListTuple(results,2)
+# Sort based on visits
+results = Tools.sortListTuple(results,2)
 
 if len(results) > 0:
     for i in results:
