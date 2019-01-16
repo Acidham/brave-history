@@ -29,8 +29,6 @@ def filterResults(li,term):
     return newList
 
 
-
-
 wf = Items()
 
 search_term = Tools.getArgv(1) if Tools.getArgv(1) is not None else ''
@@ -81,8 +79,8 @@ if len(results) > 0:
 else:
     wf.setItem(
         title="Nothing found in History!",
-        subtitle="Try again...",
-        valid=False
+        subtitle="Search with Google?",
+        arg='https://www.google.com/search?q=%s' % search_term
     )
     wf.addItem()
 wf.write()

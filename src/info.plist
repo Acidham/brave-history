@@ -37,7 +37,7 @@
 	<key>description</key>
 	<string>Search URL in Brave History</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Search Brave History</string>
 	<key>objects</key>
@@ -74,9 +74,9 @@
 				<key>scriptfile</key>
 				<string>brave_history.py</string>
 				<key>subtext</key>
-				<string></string>
-				<key>title</key>
 				<string>Search in Brave Browser History</string>
+				<key>title</key>
+				<string>Brave Browser History</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
