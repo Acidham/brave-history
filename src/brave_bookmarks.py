@@ -3,32 +3,31 @@ import json
 import os
 
 from Alfred import Items as Items
+from Alfred import Tools as Tools
 
 
 def get_all_urls(the_json):
+    def extract_data(data):
+        if data['type'] == 'url':
+            urls.append({'name': data['name'], 'url': data['url']})
+        if data['type'] == 'folder':
+            the_children = data['children']
+            get_container(the_children)
+
     def get_container(o):
         if isinstance(o, list):
             for i in o:
-                if i['type'] == 'url':
-                    urls.append({'name': i['name'], 'url': i['url']})
-                if i['type'] == 'folder':
-                    the_children = i['children']
-                    get_container(the_children)
+                extract_data(i)
         if isinstance(o, dict):
-            for k,j in o.items():
-                t = j['type']
-                if t == 'url':
-                    urls.append({'name': j['name'], 'url': j['url']})
-                if t == 'folder':
-                    the_children = j['children']
-                    get_container(the_children)
+            for k,i in o.items():
+                extract_data(i)
     urls = list()
     get_container(the_json)
     return sorted(urls, key=lambda k: k['name'], reverse=False)
 
 
 wf = Items()
-
+query = Tools.getArgv(1) if Tools.getArgv(1) is not None else str()
 user_dir = os.path.expanduser('~')
 bookmarks_file = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks'
 
@@ -40,12 +39,20 @@ bookmarks = get_all_urls(bm_json)
 for bm in bookmarks:
     name = bm['name']
     url = bm['url']
+    if query == str() or query.lower() in name.lower():
+        wf.setItem(
+            title=name,
+            subtitle=url,
+            arg=url,
+            quicklookurl=url
+        )
+        wf.addItem()
 
+if wf.getItemsLengths() == 0:
     wf.setItem(
-        title=name,
-        subtitle=url,
-        arg=url,
-        quicklookurl=url
+        title='No Bookmark found!',
+        subtitle='Search \"%s\" in Google...' % query,
+        arg='https://www.google.com/search?q=%s' % query
     )
     wf.addItem()
 

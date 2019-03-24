@@ -15,6 +15,9 @@ class Items:
         self.items = []
         self.mods = {}
 
+    def getItemsLengths(self):
+        return len(self.items)
+
     def setKv(self, key, value):
         """
         Set a key value pair to item
