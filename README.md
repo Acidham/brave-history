@@ -1,18 +1,9 @@
-# Brave History and Bookmark Search
-
-Alfred workflow to search Brave Browser History and Bookmarks
+# Brave History Search
+Alfred workflow to search Brave Browser History
 
 ## Required
-Brave Browser (Chromium)
+Brave Browser (Chromium
 
 ## Usage
-
-### History Search
-
-* `hist` query
-* *SHIFT* for quicklook URL
-
-### Bookmark Search
-
-* `bm` query
+* *hist* query
 * *SHIFT* for quicklook URL

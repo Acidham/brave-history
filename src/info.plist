@@ -31,40 +31,64 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E420908F-C5F5-44DD-AB95-0B375998DC6F</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0899A9C0-908D-4A32-9061-8DC000FAC6E2</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>49DCC431-DBD9-4007-AA87-6FB2C9D68C5D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Acidham</string>
 	<key>description</key>
 	<string>Search URL in Brave History</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Search Brave History</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>hist</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string></string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>brave_history.py</string>
+				<key>subtext</key>
+				<string>Search in Brave Browser History</string>
+				<key>title</key>
+				<string>Brave Browser History</string>
+				<key>type</key>
+				<integer>8</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A1F782AE-40F5-47BE-BA57-F230607162D5</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -83,53 +107,6 @@
 			<string>0899A9C0-908D-4A32-9061-8DC000FAC6E2</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>escaping</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>bm</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string></string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>brave_bookmarks.py</string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Search in Brave Bookmarks</string>
-				<key>type</key>
-				<integer>8</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>E420908F-C5F5-44DD-AB95-0B375998DC6F</string>
-			<key>version</key>
-			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -222,6 +199,7 @@ fi</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+<<<<<<< HEAD
 		<dict>
 			<key>config</key>
 			<dict>
@@ -269,9 +247,11 @@ fi</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+=======
+>>>>>>> parent of 34a6ed4... Added Bookmark Search
 	</array>
 	<key>readme</key>
-	<string>Search in Brave Browser History and Bookmars (Chromium)</string>
+	<string>Search in Brave Browser History (Chromium)</string>
 	<key>uidata</key>
 	<dict>
 		<key>0899A9C0-908D-4A32-9061-8DC000FAC6E2</key>
@@ -295,20 +275,17 @@ fi</string>
 		<key>A1F782AE-40F5-47BE-BA57-F230607162D5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>160</integer>
-			<key>ypos</key>
-			<integer>320</integer>
-		</dict>
-		<key>E420908F-C5F5-44DD-AB95-0B375998DC6F</key>
-		<dict>
-			<key>xpos</key>
-			<integer>160</integer>
+			<integer>190</integer>
 			<key>ypos</key>
 			<integer>170</integer>
 		</dict>
 	</dict>
 	<key>version</key>
+<<<<<<< HEAD
 	<string>0.4</string>
+=======
+	<string>0.2</string>
+>>>>>>> parent of 34a6ed4... Added Bookmark Search
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/brave-history</string>
 </dict>
