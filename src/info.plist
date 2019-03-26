@@ -8,6 +8,19 @@
 	<string>Internet</string>
 	<key>connections</key>
 	<dict>
+		<key>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6B99D187-E195-432C-A079-D4A99D9A9B0D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A1F782AE-40F5-47BE-BA57-F230607162D5</key>
 		<array>
 			<dict>
@@ -17,6 +30,16 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to Clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -40,6 +63,16 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Copy URL to Clipboard</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -128,6 +161,44 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>E420908F-C5F5-44DD-AB95-0B375998DC6F</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query} copied to the Clipboard</string>
+				<key>title</key>
+				<string>URL copied to Clipboard</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6B99D187-E195-432C-A079-D4A99D9A9B0D</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -290,14 +361,28 @@ fi</string>
 			<key>xpos</key>
 			<integer>460</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>440</integer>
+		</dict>
+		<key>6B99D187-E195-432C-A079-D4A99D9A9B0D</key>
+		<dict>
+			<key>xpos</key>
+			<integer>660</integer>
+			<key>ypos</key>
+			<integer>300</integer>
+		</dict>
+		<key>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</key>
+		<dict>
+			<key>xpos</key>
+			<integer>460</integer>
+			<key>ypos</key>
+			<integer>300</integer>
 		</dict>
 		<key>A1F782AE-40F5-47BE-BA57-F230607162D5</key>
 		<dict>
 			<key>xpos</key>
 			<integer>160</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>440</integer>
 		</dict>
 		<key>E420908F-C5F5-44DD-AB95-0B375998DC6F</key>
 		<dict>
@@ -308,7 +393,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.4</string>
+	<string>0.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/brave-history</string>
 </dict>
