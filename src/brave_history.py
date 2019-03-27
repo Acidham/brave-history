@@ -29,12 +29,17 @@ def filterResults(li,term):
     return newList
 
 
+def path_to_history():
+    user_dir = os.path.expanduser('~')
+    bm = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/History'
+    bm_dev = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/History'
+    return bm if os.path.isfile(bm) else bm_dev
+
+
 wf = Items()
 
 search_term = Tools.getArgv(1) if Tools.getArgv(1) is not None else ''
-
-user_dir = os.path.expanduser('~')
-chrome_locked_db = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/History'
+chrome_locked_db = path_to_history()
 history_db = '/tmp/History'
 
 try:

@@ -26,10 +26,16 @@ def get_all_urls(the_json):
     return sorted(urls, key=lambda k: k['name'], reverse=False)
 
 
+def path_to_bookmarks():
+    user_dir = os.path.expanduser('~')
+    bm = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks'
+    bm_dev = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/Bookmarks'
+    return bm if os.path.isfile(bm) else bm_dev
+
+
 wf = Items()
 query = Tools.getArgv(1) if Tools.getArgv(1) is not None else str()
-user_dir = os.path.expanduser('~')
-bookmarks_file = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks'
+bookmarks_file = path_to_bookmarks()
 
 with open(bookmarks_file,'r') as bm_file:
     bm_json = json.load(bm_file)['roots']
