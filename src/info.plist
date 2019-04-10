@@ -135,7 +135,7 @@
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
 				<integer>1</integer>
 				<key>queuemode</key>
@@ -297,7 +297,7 @@ fi</string>
 			<key>config</key>
 			<dict>
 				<key>alfredfiltersresults</key>
-				<true/>
+				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
 				<key>argumenttrimmode</key>
@@ -311,11 +311,11 @@ fi</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
-				<true/>
+				<false/>
 				<key>queuedelaymode</key>
 				<integer>0</integer>
 				<key>queuemode</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
@@ -393,7 +393,7 @@ fi</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.6</string>
+	<string>0.7</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/brave-history</string>
 </dict>

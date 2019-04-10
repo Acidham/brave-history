@@ -22,11 +22,11 @@ def filterResults(li,term):
     if term != '':
         newList = list()
         for i in li:
-            if term.lower() in i[1].lower():
+            if (term.lower() in i[1].lower()) or (term.lower() in i[0].lower()):
                 newList.append(i)
     else:
         newList = li
-    return newList
+    return newList[:50]
 
 
 def path_to_history():
@@ -56,7 +56,9 @@ except IOError:
 
 with sqlite3.connect(history_db) as c:
     cursor = c.cursor()
-    select_statement = "SELECT urls.url, urls.title, urls.visit_count FROM urls, visits WHERE urls.id = visits.url;"
+    select_statement = "SELECT DISTINCT urls.url, urls.title, urls.visit_count " \
+                       "FROM urls, visits " \
+                       "WHERE urls.id = visits.url AND urls.title IS NOT NULL AND urls.title != '';"
     cursor.execute(select_statement)
     results = cursor.fetchall()
 
@@ -67,7 +69,7 @@ results = removeDuplicates(results)
 # Search entered into Alfred
 results = filterResults(results,search_term)
 # Sort based on visits
-results = Tools.sortListTuple(results,2)
+results = Tools.sortListTuple(results, 2)
 
 if len(results) > 0:
     for i in results:
