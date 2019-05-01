@@ -6,6 +6,8 @@ import sqlite3
 import shutil
 import os
 
+BRAVE_HISTORY = '/Library/Application Support/BraveSoftware/Brave-Browser/Default/History'
+BRAVE_DEV_HISTORY = '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/History'
 
 def removeDuplicates(li):
     prev = str()
@@ -31,8 +33,8 @@ def filterResults(li,term):
 
 def path_to_history():
     user_dir = os.path.expanduser('~')
-    bm = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/History'
-    bm_dev = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/History'
+    bm = user_dir + BRAVE_HISTORY
+    bm_dev = user_dir + BRAVE_DEV_HISTORY
     return bm if os.path.isfile(bm) else bm_dev
 
 

@@ -5,6 +5,8 @@ import os
 from Alfred import Items as Items
 from Alfred import Tools as Tools
 
+BRAVE_BOOKMARKS = '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks'
+BRAVE_DEV_BOOKMARKS = '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/Bookmarks'
 
 def get_all_urls(the_json):
     def extract_data(data):
@@ -28,25 +30,24 @@ def get_all_urls(the_json):
 
 def path_to_bookmarks():
     user_dir = os.path.expanduser('~')
-    bm = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks'
-    bm_dev = user_dir + '/Library/Application Support/BraveSoftware/Brave-Browser-Dev/Default/Bookmarks'
+    bm = user_dir + BRAVE_BOOKMARKS
+    bm_dev = user_dir + BRAVE_DEV_BOOKMARKS
     if os.path.isfile(bm):
         return bm
     elif os.path.isfile(bm_dev):
         return bm_dev
 
+def get_json_from_file(file):
+    with open(file,'r') as bm_file:
+        return json.load(bm_file)['roots']
 
 wf = Items()
 query = Tools.getArgv(1) if Tools.getArgv(1) is not None else str()
 bookmarks_file = path_to_bookmarks()
 
 if bookmarks_file is not None:
-
-    with open(bookmarks_file,'r') as bm_file:
-        bm_json = json.load(bm_file)['roots']
-
+    bm_json = get_json_from_file(bookmarks_file)
     bookmarks = get_all_urls(bm_json)
-
     for bm in bookmarks:
         name = bm['name']
         url = bm['url']
