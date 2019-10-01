@@ -124,6 +124,8 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -162,7 +164,7 @@
 			<key>uid</key>
 			<string>E420908F-C5F5-44DD-AB95-0B375998DC6F</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -200,7 +202,7 @@
 			<key>uid</key>
 			<string>6F7CBD9B-C876-48E2-B00E-92F71C1609A5</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -300,6 +302,8 @@ fi</string>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -338,7 +342,7 @@ fi</string>
 			<key>uid</key>
 			<string>A1F782AE-40F5-47BE-BA57-F230607162D5</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -392,8 +396,10 @@ fi</string>
 			<integer>170</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>0.7</string>
+	<string>0.8</string>
 	<key>webaddress</key>
 	<string>https://github.com/Acidham/brave-history</string>
 </dict>
