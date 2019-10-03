@@ -41,7 +41,7 @@ def path_to_bookmarks():
 
 def get_json_from_file(file):
     with open(file, 'r') as bm_file:
-        return json.load(bm_file)['roots']
+        return json.load(bm_file)['roots'].encode('utf-8')
 
 
 wf = Items()
