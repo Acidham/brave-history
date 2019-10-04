@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import codecs
 import json
 import os
 
@@ -40,8 +41,7 @@ def path_to_bookmarks():
 
 
 def get_json_from_file(file):
-    with open(file, 'r') as bm_file:
-        return json.load(bm_file)['roots'].encode('utf-8')
+    return json.load(codecs.open(file, 'r', 'utf-8-sig'))['roots']
 
 
 wf = Items()
