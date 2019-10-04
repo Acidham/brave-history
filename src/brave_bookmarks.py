@@ -12,9 +12,9 @@ BRAVE_DEV_BOOKMARKS = '/Library/Application Support/BraveSoftware/Brave-Browser-
 
 def get_all_urls(the_json):
     def extract_data(data):
-        if data.get('type') == 'url':
+        if type(data) == dict and data.get('type') == 'url':
             urls.append({'name': data['name'], 'url': data['url']})
-        if data.get('type') == 'folder':
+        if type(data) == dict and data.get('type') == 'folder':
             the_children = data['children']
             get_container(the_children)
 
