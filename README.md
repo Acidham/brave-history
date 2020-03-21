@@ -6,7 +6,7 @@ New Version support Brave and additional Chromium browser: https://github.com/Ac
 
 ## Required
 
-Brave Browser (Chromium).
+Brave Browser (Chromium)....
 
 ## Usage
 
